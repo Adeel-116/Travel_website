@@ -3,11 +3,12 @@ import React, { useState } from "react";
 function TextField({ labelData, type }) {
   const [fromCity, setFromCity] = useState("Islamabad");
   const [toCity, setToCity] = useState("Karachi");
-
-  const [departDate, setDepartDate] = useState("12-9-2003");
-  const [returnDate, setReturnDate] = useState("12-9-2004");
+  const [departDate, setDepartDate] = useState("");
+  const [returnDate, setReturnDate] = useState("");
+  const [trip, setTrip] = useState("Return");
 
   const cities = ["Lahore", "Karachi", "Islamabad", "Peshawar", "Quetta"];
+  const trip_data = ["Return", "one-way", "two-way"];
 
   // Swap the cities function
   const swapCities = () => {
@@ -17,85 +18,95 @@ function TextField({ labelData, type }) {
   };
 
   return (
-    <>
-      {/* Div for Flex Columns */}
+    <div className="flex flex-col">
+      <label
+        htmlFor=""
+        className="relative max-w-fit px-1 top-2 left-4 text-black text-sm bg-white"
+      >
+        {labelData}
+      </label>
 
-      <div className="flex flex-col">
-        <label
-          htmlFor=""
-          className="relative max-w-fit px-1 top-2 left-4 text-black text-sm bg-white"
-        >
-          {labelData}
-        </label>
+      {/* Flex row container */}
+      <div className="flex flex-row md:gap-x-24 sm:gap-x-10 gap-x-5 p-2 justify-center items-center md:p-3 sm:p-2 border border-black rounded-lg">
+        {type === "Select" && (
+          <div className="flex flex-row items-center sm:text-lg">
+            <select
+              id="from"
+              value={fromCity}
+              onChange={(e) => setFromCity(e.target.value)}
+              className="appearance-none"
+            >
+              {cities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
 
-        {/* Div for flex row  */}
-        <div className="flex flex-row items-center py-3 px-4 border border-black rounded-lg">
+            <span className="mx-2">-</span>
 
-          {type === "Select" && (
-            <>
-              <select
-                id="from"
-                value={fromCity}
-                onChange={(e) => setFromCity(e.target.value)}
-                className="appearance-none"
-              >
-                {cities.map((city) => (
-                  <option key={city} value={city}>
-                    {city}
-                  </option>
-                ))}
-              </select>
+            <select
+              id="to"
+              value={toCity}
+              onChange={(e) => setToCity(e.target.value)}
+              className="appearance-none"
+            >
+              {cities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
 
-              <span className="">-</span>
+            <button
+              className="sm:text-xl text-lg font-bold border-none ml-2"
+              onClick={swapCities}
+            >
+              ⇄
+            </button>
+          </div>
+        )}
 
-              <select
-                id="to"
-                value={toCity}
-                onChange={(e) => setToCity(e.target.value)}
-                className="px-1 appearance-none"
-              >
-                {cities.map((city) => (
-                  <option key={city} value={city}>
-                    {city}
-                  </option>
-                ))}
-              </select>
+        {type === "Date" && (
+          <div className="flex items-center">
+            <input
+              type="date"
+              id="fromDate"
+              value={departDate}
+              onChange={(e) => setDepartDate(e.target.value)}
+              className="border border-gray-300 rounded-md px-2 py-1"
+            />
 
-              <button
-                className="text-2xl font-bold p-0 border w-fit border-none ml-44"
-                onClick={swapCities}
-              >
-                ⇄
-              </button>
-            </>
-          )}
+            <span className="mx-2">-</span>
 
-          {type === "Date" && (
-            <>
-              <div className="flex items-center">
-                <input
-                  type="date"
-                  id="fromDate"
-                  value={departDate}
-                  onChange={(e) => setDepartDate(e.target.value)}
-                  className="border border-gray-300 rounded-md px-2 py-1"
-                />
+            <input
+              type="date"
+              id="toDate"
+              value={returnDate}
+              onChange={(e) => setReturnDate(e.target.value)}
+              className="border border-gray-300 rounded-md px-2 py-1"
+            />
+          </div>
+        )}
 
-                <span className="mx-2">-</span>
-
-                <input
-                  type="date"
-                  id="toDate"
-                  value={returnDate}
-                  onChange={(e) => setReturnDate(e.target.value)}
-                  className="border border-gray-300 rounded-md px-2 py-1"
-                />
-              </div>
-            </>
-          )}
-        </div>
+        {type === "Trip" && (
+          <div className="flex items-center">
+            <select
+              id="Trip"
+              value={trip}
+              onChange={(e) => setTrip(e.target.value)}
+              className=""
+            >
+              {trip_data.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 }
 
