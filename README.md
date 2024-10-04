@@ -1,8 +1,2 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Hey,
+I am Muhammad Adeel, A full push stack developer, it means I write a code with the help of gpt and bard that why I am a push stack developer, IF you have any doubt kindly let me, I can clearly explain everything about the project, It project is also contributed with Mudassir, He is a genius stack developer.
