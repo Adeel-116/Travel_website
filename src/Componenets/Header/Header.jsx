@@ -6,7 +6,7 @@ import Button from "../Button";
 function Header() {
   return (
     <>
-      <header className="sm:w-100 h-auto flex justify-between items-center">
+      <header className="sm:w-100 h-auto hidden sm:flex sm:justify-between sm:items-center">
         <div className="flex gap-5">
           <Button
             value={{

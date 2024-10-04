@@ -18,18 +18,19 @@ function TextField({ labelData, type }) {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-[8px]  sm:gap-0 ">
       <label
         htmlFor=""
-        className="relative max-w-fit px-1 top-2 left-4 text-black text-sm bg-white"
+        className="relative max-w-fit px-1 top-2 xl:left-3  sm:left-2 text-black text-[10px] sm:text-[10px] md:text-[13px] bg-white"
       >
         {labelData}
       </label>
 
       {/* Flex row container */}
-      <div className="flex flex-row md:gap-x-24 sm:gap-x-10 gap-x-5 p-2 justify-center items-center md:p-3 sm:p-2 border border-black rounded-lg">
+      <div className="flex flex-row justify-center items-center sm:text-sm text-[12px]  md:p-3 p-2 border border-black sm:rounded-lg rounded-sm">
         {type === "Select" && (
-          <div className="flex flex-row items-center sm:text-lg">
+          <div className="flex flex-row items-center gap-x-14">
+            <div>
             <select
               id="from"
               value={fromCity}
@@ -57,9 +58,9 @@ function TextField({ labelData, type }) {
                 </option>
               ))}
             </select>
-
+            </div>
             <button
-              className="sm:text-xl text-lg font-bold border-none ml-2"
+              className="text-[10px] sm:text-[12px] font-bold border-none "
               onClick={swapCities}
             >
               ⇄
@@ -74,17 +75,17 @@ function TextField({ labelData, type }) {
               id="fromDate"
               value={departDate}
               onChange={(e) => setDepartDate(e.target.value)}
-              className="border border-gray-300 rounded-md px-2 py-1"
+              className="px-1 "
             />
 
-            <span className="mx-2">-</span>
+            <span className="sm:mx-2 mx-1">-</span>
 
             <input
               type="date"
               id="toDate"
               value={returnDate}
               onChange={(e) => setReturnDate(e.target.value)}
-              className="border border-gray-300 rounded-md px-2 py-1"
+              className="px-1"
             />
           </div>
         )}

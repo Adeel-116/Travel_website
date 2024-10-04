@@ -1,59 +1,81 @@
 import React, { useState } from "react";
 import TextField from "../TextField";
-import Button from '../Button'
+import Button from "../Button";
 import { IoIosBed } from "react-icons/io";
 import { MdFlight } from "react-icons/md";
 import { IoIosAdd } from "react-icons/io";
 import { IoIosSend } from "react-icons/io";
 
-
 const Form = () => {
-  
-
-    
-
   return (
     <>
 
-    <div className="w-full h-auto flex sm:flex-wrap">
-              {/* <Button buttonText="Find Flight" bg={false} rotate={true} icon={<MdFlight/>} textColor="text-black" btnIcon={true}  IconColor="text-black" />
-              <Button buttonText="Find stay" bg={false} rotate={false} icon={<IoIosBed/>} textColor="text-black" btnIcon={true}   IconColor="text-black" /> */}
-    </div>
+      <div className=" relative top-7 w-fit mx-auto h-auto bg-white z-10 md:rounded-3xl rounded-lg  md:p-5 p-3 flex flex-col gap-y-3" >
+         
+      <div className="w-fit h-auto flex">
+        <Button
+          value={{
+            bg: false,
+            buttonText: "Find Flights",
+            icon: true,
+            iconName: <MdFlight />,
+            iconColor: "#000",
+            rotate: true,
+            textColor: "#000",
+            btnColor: "transparent",
+          }}
+        />
+      </div>
 
-
-    <div className="flex items-center justify-between">
+      <div className=" w-fit flex items-center gap-x-10 flex-wrap ">
         <div>
-        <TextField labelData="From-To" type="Select"/>
+          <TextField labelData="From-To" type="Select" />
         </div>
-    
-       <div>
-        <TextField  labelData="date" type="Date"  />
-       </div>
- 
-      
-        
-        <div>
-        <TextField labelData="Trip" type="Trip"/>
-        </div>
-
 
         <div>
-        {/* <TextField labelData="Passenger-Class" type="Select"/> */}
+        <TextField labelData="Trip" type="Trip" />
         </div>
-   
+
+        <div>
+        <TextField labelData="date" type="Date" />
+        </div>
+
+        <div>
+          <TextField labelData="Passenger-Class" type="Select" />
+        </div>
+      </div>
+
+      <div className="w-auto h-auto flex xl:justify-end md:gap-3 gap-2">
+        <Button
+          value={{
+            bg: true,
+            buttonText: "Add Promo code",
+            icon: true,
+            iconName: <IoIosAdd />,
+            iconColor: "#000",
+            rotate: false,
+            textColor: "#000",
+            btnColor: "#8dd3bb",
+          }}
+        />
+        <Button
+          value={{
+            bg: true,
+            buttonText: "Show Flight",
+            icon: true,
+            iconName: <IoIosSend />,
+            iconColor: "#000",
+            rotate: false,
+            textColor: "#000",
+            btnColor: "#8dd3bb",
+          }}
+        />
+      </div>
 
 
+           
+        </div>
 
-    
-    <div className="w-full h-auto flex justify-end mt-4">
-              {/* <Button buttonText="Add Promo code" bg={false} rotate={true} icon={<IoIosAdd/>} textColor="text-black" btnIcon={true}  IconColor="text-black" />
-              <Button buttonText="Show Flights" bg={true} rotate={false} icon={<IoIosSend/>} textColor="text-black" btnIcon={true}   IconColor="text-black" bgColor="bg-green-300" /> */}
-    </div>
-
-    </div>
-      
-
-        
     </>
   );
 };

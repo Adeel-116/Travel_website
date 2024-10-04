@@ -13,11 +13,11 @@ function Button({ value }) {
   } = value;
 
   return (
-    <div className="flex">
+    <div className="">
       <button
-        className={`flex items-center rounded-lg font-medium transition-colors ${
+        className={`flex gap-1  items-center sm:rounded-lg rounded-sm font-medium transition-colors ${
           bg ? "" : "bg-transparent hover:bg-gray-700"
-        } lg:px-3 lg:py-3 lg:text-[15px]  md:px-2 md:py-2 md:text-[11px]`}
+        } lg:px-3 lg:py-3 lg:text-[14px] p-[6px] text-[9px] sm:px-2 sm:py-2 sm:text-[11px]`}
         style={{
           color: textColor,
           backgroundColor: bg ? btnColor : "",
@@ -27,7 +27,7 @@ function Button({ value }) {
           <span
             className={`${
               rotate ? "transform rotate-90" : ""
-            } flex items-center lg:text-xl md:text-sm md:mr-1`}
+            } flex items-center lg:text-lg text-[10px] md:text-sm`}
             style={{ color: iconColor }}
           >
             {iconName}

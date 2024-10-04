@@ -16,15 +16,15 @@ function App() {
   return (
     <>
       <div
-        className="sm:w-full h-screen p-5"
-        style={{ backgroundColor: "#FAFBFC" }}
+        className="sm:w-full h-auto sm:p-4 p-2"
+        style={{ backgroundColor: "#fafbfc" }}
       >
-        <div className="w-full h-auto rounded-3xl relative flex flex-col">
-          <BackgroundImage imageUrl={bgImage} className="rounded-3xl">
+        <div className="w-full h-screen relative">
+          <BackgroundImage imageUrl={bgImage} className="sm:rounded-3xl rounded-lg">
             
          {/* <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-black bg-opacity-30 z-0"></div> */}
 
-            {/* Header */}
+            <div className="flex flex-col sm:gap-y-16 gap-y-14">
             <div className="w-full p-5 relative z-10">
               <Header />
             </div>
@@ -32,10 +32,10 @@ function App() {
             {/* Content */}
             <div className="w-full h-1/2 flex justify-center items-center relative z-10">
               <div className="xl:w-1/2 w-full h-auto py-12 text-center flex flex-col leading-tight">
-                <h1 className="text-sm  xl:text-[2.5rem]  md:text-[2.1rem] text-white mx-auto font-semibold">
+                <h1 className="text-sm  xl:text-[2.5rem]  sm:text-[2.1rem] text-white mx-auto font-semibold">
                   Helping Others
                 </h1>
-                <h1 className="text-[2.6rem] xl:text-[4.5rem] md:text-[4rem] text-white font-semibold">
+                <h1 className="text-[2.2rem] xl:text-[4.5rem] sm:text-[3.7rem] text-white font-semibold">
                   LIVE & TRAVEL
                 </h1>
                 <p className="text-white text-sm xl:text-lg  md:text-sm font-medium">
@@ -44,29 +44,31 @@ function App() {
               </div>
             </div>
 
-            {/* Foam */}
 
-            <div className="md:w-[90%] m-w-full h-auto bg-white  z-10 mx-auto md:rounded-3xl rounded-lg  md:p-5 p-2">
-              <div className="">
+              <div >
                  <Form /> 
               </div>
-            </div>
+              </div>
+          
           </BackgroundImage>
         </div>
-      </div>
 
-      {/* <div className="w-full h-screen">
-        <div className="w-[90%] mx-auto p-5">
+
+
+
+        {/* Page 2 */}
+        <div className="w-full h-auto">
+        <div className="sm:w-[90%] bg-red-300 w-full mx-auto md:p-4 p-2">
           <div>
-            <h1 className="text-3xl text-black font-semibold">
+            <h1 className="sm:text-3xl text-2xl text-black font-semibold">
               Plan your perfect trip
             </h1>
-            <p className="text-gray-500">
+            <p className="text-gray-500 text-[11px] sm:text-sm">
               Search Flights & Places Hire to our most popular destinations
             </p>
           </div>
 
-          <div className="mt-6 flex flex-wrap justify-between gap-10 ">
+          <div className="mt-6 2xl:justify-center 2xl:gap-10 flex flex-wrap sm:justify-evenly justify-center gap-4">
             <Card imageUrl={img} Name="Istanbul, Turkey" />
             <Card imageUrl={img} Name="Istanbul, Turkey" />
             <Card imageUrl={img} Name="Istanbul, Turkey" />
@@ -78,8 +80,9 @@ function App() {
             <Card imageUrl={img} Name="Istanbul, Turkey" />
           </div>
 
-          <div className="w-full h-auto p-5 mt-6">
-            <div className="flex justify-center gap-10">
+
+          <div className="w-full h-auto p-5 mt-6 bg-red-300">
+            <div className=" flex justify-center flex-wrap bg-blue-300">
               <CardBooking
                 backgroundURL={bgFlight}
                 data="Flights"
@@ -93,20 +96,30 @@ function App() {
                 para="Search Flights & Places Hire to our most popular destinations"
               />
             </div>
+          </div>            
+
+
           </div>
+      </div>
+
+   
+
+         
+{/* 
+          }
 
 
-          <div className="Slider">
+          {/* <div className="Slider">
               <Slider />
-          </div>
-        </div>
+          </div> */}
+       
 
-        <div className="">
+        {/* <div className="">
         <div className="">
             <Footer />
           </div>
-        </div>
         </div> */}
+        </div> 
     </>
   );
 }
