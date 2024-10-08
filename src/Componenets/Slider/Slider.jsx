@@ -49,23 +49,26 @@ function Slider() {
     <>
       <div className="mt-3 w-full h-auto flex items-center justify-between py-5 px-6">
         <div className="w-auto">
-          <h1 className="text-3xl font-semibold">Reviews</h1>
-          <p>What people say about Golobe facilities</p>
+          <h1 className="sm:text-[2.5rem] text-[1.8rem] font-semibold">Reviews</h1>
+          <p className="text-sm sm:text-lg">What people say about Golobe facilities</p>
         </div>
 
-        <div className="w-auto">
-          <Button
-            buttonText="See All"
-            bg={true}
-            rotate={false}
-            icon={""}
-            textColor="text-black"
-            btnIcon={false}
+        <div className="w-auto hidden sm:block">
+        <Button
+           value={{
+              bg: true,
+              buttonText: "See all",
+              icon: false,
+              iconName: '',
+              iconColor: "#ffff",
+              rotate: false,
+              textColor: "#000",
+            }}
           />
         </div>
       </div>
 
-      <div className="slider w-full h-auto mt-4 flex justify-center py-0 px-3">
+      <div className="slider w-full h-auto sm:mt-4 flex justify-center py-0 sm:px-3">
         <div
           ref={sliderRef}
           className={`w-[100%] flex overflow-x-hidden overflow-y-hidden space-x-20 scroll-smooth snap-x snap-mandatory mx-auto  p-4 relative 

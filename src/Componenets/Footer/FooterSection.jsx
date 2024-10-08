@@ -16,7 +16,7 @@ function FooterSection(props) {
         <div>
           <img src={FooterLogo} alt="" />
         </div>
-        <div className="flex gap-3 text-xl">
+        <div className="flex gap-3 text-xl ">
           <FaFacebook />
           <FaWhatsapp />
           <FaTwitter />

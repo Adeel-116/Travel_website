@@ -15,11 +15,13 @@ import Footer from "./Componenets/Footer/Footer";
 function App() {
   return (
     <>
+        <div className="w-full">
+
       <div
-        className="sm:w-full h-auto sm:p-4 p-2"
-        style={{ backgroundColor: "#fafbfc" }}
+        className="sm:w-full  sm:p-4 p-2"
+        style={{ backgroundColor: "#d5d3d3" }}
       >
-        <div className="w-full h-screen relative">
+        <div className="w-full xl:h-screen md:h-auto  relative">
           <BackgroundImage imageUrl={bgImage} className="sm:rounded-3xl rounded-lg">
             
          {/* <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-black bg-opacity-30 z-0"></div> */}
@@ -30,7 +32,7 @@ function App() {
             </div>
 
             {/* Content */}
-            <div className="w-full h-1/2 flex justify-center items-center relative z-10">
+            <div className=" w-full h-1/2 flex justify-center items-center relative z-10">
               <div className="xl:w-1/2 w-full h-auto py-12 text-center flex flex-col leading-tight">
                 <h1 className="text-sm  xl:text-[2.5rem]  sm:text-[2.1rem] text-white mx-auto font-semibold">
                   Helping Others
@@ -57,8 +59,8 @@ function App() {
 
 
         {/* Page 2 */}
-        <div className="w-full h-auto">
-        <div className="sm:w-[90%] bg-red-300 w-full mx-auto md:p-4 p-2">
+        <div className="xl:mt-0 mt-20 w-full h-auto">
+        <div className="sm:w-[90%] w-full mx-auto md:p-4 p-2">
           <div>
             <h1 className="sm:text-3xl text-2xl text-black font-semibold">
               Plan your perfect trip
@@ -81,45 +83,25 @@ function App() {
           </div>
 
 
-          <div className="w-full h-auto p-5 mt-6 bg-red-300">
-            <div className=" flex justify-center flex-wrap bg-blue-300">
-              <CardBooking
-                backgroundURL={bgFlight}
-                data="Flights"
-                btnText="Show Flights"
-                para="Search Flights & Places Hire to our most popular destinations"
-              />
-              <CardBooking
-                backgroundURL={bgHotel}
-                data="Hotels"
-                btnText="Show Hotels"
-                para="Search Flights & Places Hire to our most popular destinations"
-              />
-            </div>
-          </div>            
-
+          <div className="Slider">
+              <Slider />
+          </div>
 
           </div>
-      </div>
+          </div>
 
-   
+          </div> 
 
          
-{/* 
-          }
 
 
-          {/* <div className="Slider">
-              <Slider />
-          </div> */}
-       
-
-        {/* <div className="">
-        <div className="">
+          
+      <div className="">
             <Footer />
           </div>
-        </div> */}
-        </div> 
+
+          </div>
+       
     </>
   );
 }
