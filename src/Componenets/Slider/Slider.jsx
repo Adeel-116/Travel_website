@@ -47,7 +47,7 @@ function Slider() {
 
   return (
     <>
-      <div className="mt-3 w-full h-auto flex items-center justify-between py-5 px-6">
+      <div className="mt-3 w-full h-auto flex items-center justify-between p-1 sm:py-5 sm:px-6">
         <div className="w-auto">
           <h1 className="sm:text-[2.5rem] text-[1.8rem] font-semibold">Reviews</h1>
           <p className="text-sm sm:text-lg">What people say about Golobe facilities</p>
@@ -63,6 +63,7 @@ function Slider() {
               iconColor: "#ffff",
               rotate: false,
               textColor: "#000",
+              border: true,
             }}
           />
         </div>

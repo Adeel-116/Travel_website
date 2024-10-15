@@ -10,14 +10,16 @@ function Button({ value }) {
     rotate = false,
     textColor = "",
     btnColor = "transparent",
+    border=false
   } = value;
 
   return (
     <div className="">
       <button
         className={`flex gap-1  items-center sm:rounded-lg rounded-sm font-medium transition-colors ${
-          bg ? "" : "bg-transparent hover:bg-gray-700"
-        } lg:px-3 lg:py-3 lg:text-[14px] p-[6px] text-[9px] sm:px-2 sm:py-2 sm:text-[11px]`}
+          bg ? "" : "bg-transparent"
+          }
+          ${border ? "border border-darkGreen" : ""} lg:px-5 lg:py-3 lg:text-[14px] p-[6px] text-[9px] sm:px-2 sm:py-2 sm:text-[11px]`}
         style={{
           color: textColor,
           backgroundColor: bg ? btnColor : "",
