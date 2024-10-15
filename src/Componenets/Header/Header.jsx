@@ -104,9 +104,11 @@ function Header() {
               <a href="#home" className="text-white text-lg">
                 Home
               </a>
+              <NavLink to="find-flight">
               <a href="#about" className="text-white text-lg">
                 Find Flight
               </a>
+              </NavLink>
               <a href="#login" className="text-white text-lg">
                 Find Stay
               </a>
