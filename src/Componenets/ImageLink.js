@@ -12,7 +12,7 @@ import img7 from "../assets/HomePage/img7.png";
 import img8 from "../assets/HomePage/img8.png";
 import img9 from "../assets/HomePage/img9.png";
 import landingBanner from "../assets/HomePage/banner.png";
-import Landinglogo from "../assets/HomePage/Landinglogo.png";
+import Landinglogo from "../assets/HomePageLandingLogo.png"
 import FlightPageLogo from "../assets/FlightSearch/Logo.png";
 import Banner from "../assets/FlightSearch/Banner.jpg"
 import Map from "../assets/FlightSearch/map.png"
