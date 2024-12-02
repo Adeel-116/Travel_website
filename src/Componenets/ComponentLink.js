@@ -9,6 +9,7 @@ import Button from "./Button"
 import TextContent from "./TextContent";
 import FlightDetailsPageCard from "../Pages/FlightDetails/FlightDetailsPageCard";
 import FlightBookButton from "../Pages/FlightDetails/FlightBookButton";
+import TextField from "./TextField";
 
 // Exports
 export {
@@ -23,4 +24,5 @@ export {
   TextContent,
   FlightDetailsPageCard,
   FlightBookButton,
+  TextField
 };

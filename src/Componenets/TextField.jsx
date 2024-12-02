@@ -27,7 +27,7 @@ function TextField({ labelData, type }) {
       </label>
 
       {/* Flex row container */}
-      <div className="flex flex-row justify-center items-center sm:text-sm text-[12px]  md:p-3 p-2 border border-black sm:rounded-lg rounded-sm">
+      <div className="flex flex-row justify-center items-center sm:text-sm text-[12px]  md:p-3 p-2.5 border border-black sm:rounded-lg">
         {type === "Select" && (
           <div className="flex flex-row items-center gap-x-14">
             <div>

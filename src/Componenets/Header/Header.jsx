@@ -4,7 +4,7 @@ import { IoIosBed } from "react-icons/io";
 import Button from "../Button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Landinglogo } from "../ImageLink";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isDivVisible, setIsDivVisible] = React.useState(false);
@@ -16,60 +16,65 @@ function Header() {
   return (
     <>
       <header className="w-full sm:p-5">
-        <div className="sm:w-100 w-full relative sm:h-auto hidden sm:flex sm:justify-between sm:items-center">
-          <div className="flex gap-5">
-            <NavLink to="find-flight">
-              
-              <Button
-                value={{
-                  bg: false,
-                  buttonText: "Find Flights",
-                  icon: true,
-                  iconName: <MdFlight />,
-                  iconColor: "#ffff",
-                  rotate: true,
-                  textColor: "#ffff",
-                  btnColor: "transparent",
-                }}
-              />
-            </NavLink>
+      <div className="sm:w-100 w-full relative sm:h-auto hidden sm:flex sm:justify-between sm:items-center">
+      <div className="flex gap-5">
+        <Link to="/flight-details">
+          <Button
+            value={{
+              bg: false,
+              buttonText: "Find Flights",
+              icon: true,
+              iconName: <MdFlight />,
+              iconColor: "#ffff",
+              rotate: true,
+              textColor: "#ffff",
+              btnColor: "transparent",
+            }}
+          />
+        </Link>
 
-            <Button
-              value={{
-                bg: false,
-                buttonText: "Find Stay",
-                icon: true,
-                iconName: <IoIosBed />,
-                iconColor: "#ffff",
-                rotate: false,
-                textColor: "#ffff",
-              }}
-            />
-          </div>
+        <Link to="/stay">
+          <Button
+            value={{
+              bg: false,
+              buttonText: "Find Stay",
+              icon: true,
+              iconName: <IoIosBed />,
+              iconColor: "#ffff",
+              rotate: false,
+              textColor: "#ffff",
+            }}
+          />
+        </Link>
+      </div>
 
-          <div className="w-auto h-auto">
-            <img src={Landinglogo} alt="image" />
-          </div>
+      <div className="w-auto h-auto">
+        <img src={Landinglogo} alt="Landing logo" />
+      </div>
 
-          <div className="flex gap-3">
-            <Button
-              value={{
-                bg: false,
-                buttonText: "Login",
-                textColor: "#ffff",
-              }}
-            />
+      <div className="flex gap-3">
+        <Link to="/login">
+          <Button
+            value={{
+              bg: false,
+              buttonText: "Login",
+              textColor: "#ffff",
+            }}
+          />
+        </Link>
 
-            <Button
-              value={{
-                bg: true,
-                buttonText: "Sign up",
-                textColor: "#000",
-                btnColor: "#ffff",
-              }}
-            />
-          </div>
-        </div>
+        <Link to="/signup">
+          <Button
+            value={{
+              bg: true,
+              buttonText: "Sign up",
+              textColor: "#000",
+              btnColor: "#ffff",
+            }}
+          />
+        </Link>
+      </div>
+    </div>
 
         {/* Mobile Responsive */}
 
@@ -104,11 +109,11 @@ function Header() {
               <a href="#home" className="text-white text-lg">
                 Home
               </a>
-              <NavLink to="find-flight">
+             
               <a href="#about" className="text-white text-lg">
                 Find Flight
               </a>
-              </NavLink>
+           
               <a href="#login" className="text-white text-lg">
                 Find Stay
               </a>

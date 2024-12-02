@@ -1,5 +1,6 @@
 import React from 'react';
 import FlightBookButton from './FlightBookButton';
+import { Link } from 'react-router-dom';
 
 function FlightDetailsPageCard({ countryName, para, price, pictureUrl }) {
   return (
@@ -21,7 +22,9 @@ function FlightDetailsPageCard({ countryName, para, price, pictureUrl }) {
               <h2 className="2xl:text-lg text-[12px] sm:text-sm font-medium">$&nbsp;{price}</h2>
             </div>
           </div>
+          <Link to="/booking-details">
           <FlightBookButton />
+          </Link>
         </div>
       </div>
     </div>

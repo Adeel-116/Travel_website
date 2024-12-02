@@ -37,7 +37,7 @@ function LandingPage() {
               imageUrl={landingBanner}
               className="sm:rounded-3xl rounded-lg"
             >
-              <div className="flex flex-col sm:gap-y-16 gap-y-14">
+              <div className="flex flex-col sm:gap-y-16 gap-y-14 relative">
                 <Header
                 
                 />
@@ -60,12 +60,17 @@ function LandingPage() {
                 <div>
                   <Form />
                 </div>
+
+                {/* <div class="absolute w-full h-full" style={{backgroundColor: "rgba(0, 0, 0, 0)"}}></div> */}
               </div>
+
+
+              
             </BackgroundImage>
           </div>
 
           {/* Page 2 */}
-          <div className="xl:mt-0 mt-20 w-full h-auto">
+          <div className="xl:mt-0 mt-20 w-full ">
             <div className="sm:w-[90%] w-full mx-auto md:p-4 p-2">
               <div>
                 <h1 className="sm:text-3xl text-2xl text-black font-semibold">

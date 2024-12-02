@@ -20,6 +20,7 @@ import {
   FlightBookButton,
   Footer
 } from "../../Componenets/ComponentLink";
+import { Link } from "react-router-dom";
 
 function FlightDetails() {
   return (
@@ -144,7 +145,9 @@ function FlightDetails() {
                 </div>
 
                 <div className="mt-24">
+                <Link to="/booking-details">
                   <FlightBookButton />
+                  </Link>
                 </div>
 
               </div>
