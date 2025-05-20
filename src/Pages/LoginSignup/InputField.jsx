@@ -1,18 +1,25 @@
 import React from "react";
 
-const InputField = ({ label, type, placeholder, children}) => (
-  <div className={`mb-0.5 flex flex-col ${children}`}>
+const InputField = ({ name, label, type, placeholder, value, onChange, error, children }) => (
+  <div className={`mb-3 flex flex-col ${children}`}>
     <label
-      htmlFor=""
-      className="relative sm:top-2 top-1 max-w-fit  text-gray-400 text-[13px] sm:text-[14px] md:text-[16px]"
+      htmlFor={name}
+      className="text-gray-500 text-sm font-medium mb-1"
     >
       {label}
     </label>
     <input
+      id={name}
+      name={name}
       type={type}
       placeholder={placeholder}
-      className={`w-full sm:px-4 sm:py-3 p-1.5 md:text-sm mt-1 border border-gray-400 rounded-md focus:outline-none focus:ring-1 focus:ring-green-500`}
+      value={value}
+      onChange={onChange}
+      className={`w-full px-3 py-2 text-sm border ${
+        error ? "border-red-500 focus:ring-red-500" : "border-gray-400 focus:ring-green-500"
+      } rounded-md focus:outline-none focus:ring-1`}
     />
+    {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
   </div>
 );
 
