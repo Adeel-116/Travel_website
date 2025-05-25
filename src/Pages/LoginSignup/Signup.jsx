@@ -8,9 +8,10 @@ import facebookIcon from "../../assets/BookingDetails/facebook-icon.png";
 import googleIcon from "../../assets/BookingDetails/google-icon.png";
 import appleIcon from "../../assets/BookingDetails/apple-icon.png";
 import FlightLogin from "../../assets/LoginSignup/FlightLogin.png";
-
+import { useNavigate, NavLink } from "react-router-dom";
 
 function Signup() {
+  const navigate = useNavigate()
 
   // Form State
   const [formData, setFormData] = useState({
@@ -131,6 +132,7 @@ function Signup() {
         });
         setAgreeTerms(false);
         setFormErrors({});
+        navigate('/login')
       }
     } catch (error) {
       setNotification({
