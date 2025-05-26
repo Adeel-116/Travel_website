@@ -8,24 +8,27 @@ import appleIcon from "../../assets/BookingDetails/apple-icon.png";
 import FlightLogin from "../../assets/LoginSignup/FlightLogin.png";
 import Popup from "./Popup";
 import axios from "axios";
+import { useNavigate,  NavLink } from "react-router-dom";
 
 function ForgetPassword() {
-  const [data, setData] = useState({email: ''})
+  const navigate = useNavigate();
+
+  const [data, setData] = useState({ email: '' })
   const [formErrors, setFormErrors] = useState({});
   const [notification, setNotification] = useState(null);
 
 
- const handleChange = (e) => {
-  const { name, value } = e.target;
-   setData((prevErrors) => ({
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevErrors) => ({
       ...prevErrors,
       [name]: value,
     }));
     validateField(name, value);
-};
+  };
 
-const validateField = (name, value)=>{
-  let error = "";
+  const validateField = (name, value) => {
+    let error = "";
 
     switch (name) {
       case "email":
@@ -34,34 +37,39 @@ const validateField = (name, value)=>{
       default:
         error = value.trim() === "" ? `${name} is required.` : "";
         break;
-        } 
-      setFormErrors((prevErrors) => ({
+    }
+    setFormErrors((prevErrors) => ({
       ...prevErrors,
       [name]: error,
-      }));
+    }));
+
+  }
 
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-
-      const handleSubmit = async(e)=>{
-        e.preventDefault();
-        
-         try{
-          const response = await axios.post("http://localhost:5000/verify-email", data.email);
-         
-          if (response.status === 201) {
-            setNotification({ type: "success", message: "OTP send Successfully" });
-            navigate('/verify-email')
-          }
-        } catch (error) {
-          setNotification({
-            type: "error",
-            message: "Signup failed. Please try again.",
-          });
-        }
-      };
-
+    try {
+      const response = await axios.post("http://localhost:5000/verify-email", data);
+      console.log(response.status)
+      if (response.status === 200) {
+        setNotification({ type: "success", message: "OTP send Successfully" });
+        navigate('/verify-otp')
       }
+    } catch (error) {
+      const status = error.response.status;
+
+      if (status === 404) {
+        setNotification({ type: "error", message: "User not found" });
+      } else if (status === 502) {
+        setNotification({ type: "error", message: "OTP sending failed" });
+      } else {
+        setNotification({ type: "error", message: "Server error occurred" });
+      }
+    }
+  };
+
+
 
   return (
     <>
@@ -97,7 +105,7 @@ const validateField = (name, value)=>{
 
                   <div className="mt-1 xl:w-[75%] w-full lg:w-[80%] ">
                     <div className=" flex flex-col">
-                        <InputField
+                      <InputField
                         name="email"
                         type="email"
                         label="Email"
@@ -148,7 +156,7 @@ const validateField = (name, value)=>{
             <div
               className="lg:w-[45%] md:w-[50%] h-full bg-center md:block  hidden  rounded-2xl"
               style={{
-                backgroundImage: url(`${FlightLogin}`),
+                backgroundImage: `url(${FlightLogin})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
