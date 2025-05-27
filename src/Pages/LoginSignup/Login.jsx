@@ -59,7 +59,6 @@ function Login() {
     let hasErrors = false;
     e.preventDefault();
 
-    let error;
     for (const [key, value] of Object.entries(formData)) {
       validateField(key, value);
       if (formErrors[key]) hasErrors = true;
