@@ -21,7 +21,7 @@ function App() {
         <Route path="/signup" element={<Signup />} /> {/* Signup route */}
         <Route path="/forget-password" element={<ForgetPassword />} /> {/* ForgetPassword route */}
         <Route path="/verify-otp" element={<VerifyCode />} /> {/* VerifyCode route */} 
-        <Route path="/set-password" element={<SetPassword />} /> {/* SetPassword route */}
+        <Route path="/update-password" element={<SetPassword />} /> {/* SetPassword route */}
       </Routes>
     </Router>
   );

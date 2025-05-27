@@ -3,8 +3,10 @@ import { FlightPageLogo } from "../../Componenets/ImageLink";
 import InputField from "./InputField";
 import FlightLogin from "../../assets/LoginSignup/FlightLogin.png";
 import Popup from "./Popup";
-
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function VerifyCode() {
+  const navigate = useNavigate()
   const [otp, setOTP] = useState("");
   const [error, setError]= useState("")
    const [notification, setNotification] = useState(null);
@@ -20,16 +22,33 @@ function VerifyCode() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(otp)
     try {
-      const response = await axios.post("http://localhost:5000/verify-otp", otp);
-      console.log(response.status)
+      const response = await axios.post("http://localhost:5000/verify-otp",  { otp }, {withCredentials : true});
+      console.log(response)
       if (response.status === 200) {
         setNotification({ type: "success", message: "OTP Match Successfully" });
+        navigate('/update-password')
       }
+
     } catch (error) {
-      const status = error.response.status;
-      console.log(status)
+      const status = error.response?.status;
+         
+      if (status === 400) {
+        setNotification({ type: "Error", message: "OTP required" });
+      }
+      else if (status === 404) {
+        setNotification({ type: "Error", message: "OTP not found or expired. Please request again." });
+      }
+      else if (status === 410) {
+        setNotification({ type: "Error", message: "OTP has expired. Please request again." });
+      }
+      else if (status === 401) {
+        setNotification({ type: "Error", message: "Invalid OTP" });
+      }
+      else{
+        setNotification({ type: "Error", message: "Server Internal Error" });
+      }
     }
   };
 
