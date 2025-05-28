@@ -51,7 +51,7 @@ function ForgetPassword() {
 
     try {
       const response = await axios.post("http://localhost:5000/verify-email", data, {withCredentials: true});
-      console.log(response.status)
+
       if (response.status === 200) {
         setNotification({ type: "success", message: "OTP send Successfully" });
         navigate('/verify-otp')

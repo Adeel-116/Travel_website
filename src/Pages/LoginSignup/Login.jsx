@@ -73,7 +73,6 @@ function Login() {
 
     try {
       const response = await axios.post("http://localhost:5000/login", formData, { withCredentials: true });
-      console.log("✅ Successful response", response.status);
       setNotification({
         type: "success",
         message: "Login Successfully",
@@ -84,7 +83,6 @@ function Login() {
 
       switch (status) {
         case 401:
-          console.log("🔐 Incorrect password");
           setNotification({
             type: "error",
             message: "Incorrect password",
@@ -92,7 +90,7 @@ function Login() {
           break;
 
         case 404:
-          console.log("❓ User not found");
+
           setNotification({
             type: "warning",
             message: "User not found",
@@ -100,7 +98,7 @@ function Login() {
           break;
 
         default:
-          console.log("❌ Server or unexpected error");
+   
           setNotification({
             type: "error",
             message: "Login failed. Please try again.",

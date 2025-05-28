@@ -22,10 +22,9 @@ function VerifyCode() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(otp)
+
     try {
       const response = await axios.post("http://localhost:5000/verify-otp",  { otp }, {withCredentials : true});
-      console.log(response)
       if (response.status === 200) {
         setNotification({ type: "success", message: "OTP Match Successfully" });
         navigate('/update-password')
