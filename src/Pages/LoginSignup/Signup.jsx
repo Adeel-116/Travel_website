@@ -169,7 +169,7 @@ function Signup() {
               <div className="h-auto 2xl:p-5 p-2">
                 <img src={FlightPageLogo} alt="Logo" />
 
-                <div className="sm:mt-16 mt-5 flex flex-col">
+                <div className="mt-5 flex flex-col">
                   <h1 className="text-[2rem] sm:text-[2.6rem] font-semibold">
                     Signup
                   </h1>
@@ -271,9 +271,9 @@ function Signup() {
 
                   <p className="mt-2 text-sm text-center text-gray-600">
                     Already have an account?{" "}
-                    <a href="#" className="text-green-600 hover:underline">
+                    <NavLink to="/login" className="text-green-600 hover:underline">
                       Login
-                    </a>
+                    </NavLink>
                   </p>
 
                   <div className="flex items-center justify-center my-4">
@@ -286,16 +286,8 @@ function Signup() {
 
                   <div className="flex gap-x-3">
                     <BookingDetailsPageButton
-                      icon={facebookIcon}
-                      children="w-1/3"
-                    />
-                    <BookingDetailsPageButton
                       icon={googleIcon}
-                      children="w-1/3"
-                    />
-                    <BookingDetailsPageButton
-                      icon={appleIcon}
-                      children="w-1/3"
+                      children="w-full"
                     />
                   </div>
                 </div>

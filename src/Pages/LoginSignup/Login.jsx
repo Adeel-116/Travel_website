@@ -113,6 +113,14 @@ function Login() {
     })
   }
 
+
+    const handleAuth = (e)=>{
+      
+   
+    }
+
+
+
   return (
     <>
       {notification && (
@@ -209,19 +217,10 @@ function Login() {
 
                     <div className="flex gap-x-3">
                       <BookingDetailsPageButton
-                        icon={facebookIcon}
-                        text=""
-                        children="w-1/2"
-                      />
-                      <BookingDetailsPageButton
                         icon={googleIcon}
                         text=""
-                        children="w-1/2"
-                      />
-                      <BookingDetailsPageButton
-                        icon={appleIcon}
-                        text=""
-                        children="w-1/2"
+                        children="w-full"
+                        onClickGoogleAuth={handleAuth}
                       />
                     </div>
                   </div>
