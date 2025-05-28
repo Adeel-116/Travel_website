@@ -46,6 +46,9 @@ function VerifyCode() {
       else if (status === 401) {
         setNotification({ type: "Error", message: "Invalid OTP" });
       }
+      else if (status === 500) {
+        setNotification({ type: "Error", message: "Internal server error" });
+      }
       else{
         setNotification({ type: "Error", message: "Server Internal Error" });
       }

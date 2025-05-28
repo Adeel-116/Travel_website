@@ -77,16 +77,16 @@ function SetPassword() {
           { withCredentials: true }
         );
       
+          console.log(response.status)
         if (response.status === 201) {
           setNotification({ type: "success", message: "Password updated successfully" });
           navigate('/login'); 
         }
       } catch (error) {
         const status = error.response?.status;
-      
+        console.log(status)
         if (status === 403) {
           setNotification({ type: "error", message: "Session expired or unauthorized access" });
-          navigate('/forgot-password');
         } else if (status === 500) {
           setNotification({ type: "error", message: "Internal server error" });
         } else {
