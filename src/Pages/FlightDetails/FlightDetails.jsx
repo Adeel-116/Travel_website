@@ -25,7 +25,7 @@ import { Link } from "react-router-dom";
 function FlightDetails() {
   return (
     <>
-      <div className="w-full h-auto bg-gray-500">
+      <div className="w-full h-auto bg-[#FECD88]">
         <header>
           <Header />
         </header>
