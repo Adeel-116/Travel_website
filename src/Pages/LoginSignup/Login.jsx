@@ -114,10 +114,10 @@ function Login() {
   }
 
 
-    const handleAuth = (e)=>{
-      
-   
-    }
+  const handleAuth = () => {
+    console.log("Button click")
+    window.open('http://localhost:5000/api/auth/google', '_self');
+  };
 
 
 
