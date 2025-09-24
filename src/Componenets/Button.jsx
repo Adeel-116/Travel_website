@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Button({ value }) {
   const {
@@ -10,11 +11,12 @@ function Button({ value }) {
     rotate = false,
     textColor = "",
     btnColor = "transparent",
-    border=false
+    border = false,
+    onClick = () => {}, 
   } = value;
 
   return (
-    <div className="">
+    <div className="" onClick={onClick}>
       <button
         className={`flex gap-1  items-center sm:rounded-lg rounded-sm font-medium transition-colors ${
           bg ? "" : "bg-transparent"
@@ -36,9 +38,26 @@ function Button({ value }) {
           </span>
         )}
         {buttonText}
+
+        
       </button>
     </div>
   );
 }
+Button.propTypes = {
+  value: PropTypes.shape({
+    bg: PropTypes.bool,
+    buttonText: PropTypes.string,
+    iconName: PropTypes.node,
+    icon: PropTypes.bool,
+    iconColor: PropTypes.string,
+    rotate: PropTypes.bool,
+    textColor: PropTypes.string,
+    btnColor: PropTypes.string,
+    border: PropTypes.bool,
+    onClick: PropTypes.func,
+  }),
+};
 
 export default Button;
+

@@ -33,7 +33,7 @@ function Header() {
           />
         </Link>
 
-        <Link to="/stay">
+        <Link to="/coming-soon">
           <Button
             value={{
               bg: false,
@@ -79,7 +79,7 @@ function Header() {
         {/* Mobile Responsive */}
 
         <div className="w-full h-auto relative sm:hidden">
-          <div className="p-4 flex justify-between bg-navColor">
+          <div className="p-4 flex justify-between ">
             <div className="w-auto h-auto">
               <img src={Landinglogo} alt="image" />
             </div>

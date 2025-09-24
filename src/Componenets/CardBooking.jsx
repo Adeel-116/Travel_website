@@ -1,8 +1,8 @@
-import React from "react";
+
 import Button from "./Button";
 import { IoIosSend } from "react-icons/io";
 
-function CardBooking({ backgroundURL, data, para, btnText }) {
+function CardBooking({ backgroundURL, data, para, btnText, onClick }) {
   return (
     <div
       className="sm:w-[460px] w-[288px] h-auto rounded-xl bg-center bg-no-repeat bg-cover"
@@ -22,7 +22,9 @@ function CardBooking({ backgroundURL, data, para, btnText }) {
               rotate: false,
               textColor: "#000",
               btnColor: "#8DD3BB",
+              onClick: onClick,
             }}
+            onClick={onClick}
           />
         </div>
       </div>

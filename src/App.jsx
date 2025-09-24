@@ -8,6 +8,7 @@ import Signup from "./Pages/LoginSignup/Signup";
 import ForgetPassword from "./Pages/LoginSignup/ForgetPassword";
 import VerifyCode from "./Pages/LoginSignup/VerifyCode";
 import SetPassword from "./Pages/LoginSignup/SetPassword";
+import ComingSoon from './Pages/ComingSoon/ComingSoon';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/forget-password" element={<ForgetPassword />} /> {/* ForgetPassword route */}
         <Route path="/verify-otp" element={<VerifyCode />} /> {/* VerifyCode route */} 
         <Route path="/update-password" element={<SetPassword />} /> {/* SetPassword route */}
+        <Route path="/coming-soon" element={<ComingSoon />} /> 
       </Routes>
     </Router>
   );

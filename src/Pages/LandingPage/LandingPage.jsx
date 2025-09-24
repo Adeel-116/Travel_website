@@ -26,18 +26,23 @@ import {
   BackgroundImage,
   Header,
 } from "../../Componenets/ComponentLink";
+import { useNavigate } from "react-router-dom";
+import TravelMarquee from "../../Componenets/TravelMarquee";
 
 function LandingPage() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="w-full bg-lightWhite">
         <div className="sm:w-full sm:p-4 ">
-          <div className="w-full xl:h-screen md:h-auto  relative">
+          <div className="w-full xl:h-screen md:h-auto relative">
             <BackgroundImage
               imageUrl={landingBanner}
               className="sm:rounded-3xl rounded-lg"
             >
-              <div className="flex flex-col sm:gap-y-16 gap-y-14 relative">
+
+                 <div className="absolute inset-0 bg-black/50 sm:rounded-3xl rounded-lg"></div>
+                  <div className="flex flex-col sm:gap-y-16 gap-y-14 relative">
                 <Header
                 
                 />
@@ -61,12 +66,13 @@ function LandingPage() {
                   <Form />
                 </div>
 
-                {/* <div class="absolute w-full h-full" style={{backgroundColor: "rgba(0, 0, 0, 0)"}}></div> */}
               </div>
-
-
-              
             </BackgroundImage>
+
+            <div className="absolute bottom-10 w-full h-20 bg-gradient-to-t from-lightWhite to-transparent rounded-b-3xl">
+              <TravelMarquee />
+            </div>
+          
           </div>
 
           {/* Page 2 */}
@@ -99,12 +105,15 @@ function LandingPage() {
                   data="Flights"
                   para="Search Flights & Places Hire to our most popular destinations"
                   btnText="Show Flight"
+                  onClick={()=> navigate("/flight-details")}
+               
                 />
                 <CardBooking
                   backgroundURL={bgHotel}
                   data="Hotels"
                   para="Search Hotels & Places Hire to our most popular destinations"
                   btnText="Show Hotels"
+                  onClick={()=> navigate("/coming-soon")}
                 />
               </div>
 
